@@ -17,13 +17,14 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import net.neoforged.neoforge.common.NeoForge;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(CreateChroniclesCore.MOD_ID)
 public class CreateChroniclesCore
 {
     public static final String MOD_ID = "create_chronicles2_core";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -32,6 +33,7 @@ public class CreateChroniclesCore
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+        NeoForge.EVENT_BUS.register(new ItemUseEventHandler());
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.

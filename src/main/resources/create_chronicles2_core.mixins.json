@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "dev.createchronicles2.core.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MixinDimDungeons"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
